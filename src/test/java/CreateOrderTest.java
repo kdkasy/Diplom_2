@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class CreateOrderTest {
 
-    private final Ingredients ingredients = new Ingredients( Arrays.asList("61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa74"));
+    private final Ingredients ingredients = IngredientsGenerator.generateIngredients();
     private  final Ingredients emptyIngredients = new Ingredients();
     private  final Ingredients wrongHashIngredients = new Ingredients( Arrays.asList("61c0001bdaaa6d","61cdaaa74"));
 

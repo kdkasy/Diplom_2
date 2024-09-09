@@ -3,7 +3,6 @@ import io.restassured.http.Header;
 import io.restassured.response.ValidatableResponse;
 import org.apache.http.HttpStatus;
 import org.junit.Test;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -29,7 +28,7 @@ public class GetOrdersFromUserTest {
         String accessToken = userClient.logInTestUser(user);
 
         Header header = new Header("authorization", accessToken);
-        Ingredients ingredients = new Ingredients( Arrays.asList("61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa74"));
+        Ingredients ingredients = IngredientsGenerator.generateIngredients();
         OrderClient orderClient = new OrderClient();
 
         orderClient.createOrder(ingredients, header).statusCode(HttpStatus.SC_OK);
